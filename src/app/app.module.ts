@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ActionsComponent } from './actions/actions.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent,
+    ActionsComponent
   ],
   imports: [
     BrowserModule,
