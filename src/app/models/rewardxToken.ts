@@ -7,4 +7,5 @@ export class RewardxToken {
     customerTokenValue: string[];
     assignedToMerchantFlag: string;
     assignedToCustomerFlag: string;
+    balance: string;
 }
