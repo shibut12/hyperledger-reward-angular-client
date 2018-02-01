@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+  
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="customerId">
+        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.customerId}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="marchentId">
+        <mat-header-cell *matHeaderCellDef> Merchant ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.marchentId}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="tokenamount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tokenamount}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="validity">
+        <mat-header-cell *matHeaderCellDef> Validity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.validity}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="customerId">
+        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.customerId}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="redeemFlag">
+        <mat-header-cell *matHeaderCellDef> Is Redeemed </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.redeemFlag}} </mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>

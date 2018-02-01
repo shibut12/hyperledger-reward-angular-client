@@ -1,11 +1,74 @@
-<mat-tab-group>
-  <mat-tab label="Tab 1">
-    <mat-card>Simple card #1</mat-card>
-  </mat-tab>
-  <mat-tab label="Tab 2">
-    <mat-card>Simple card# 2</mat-card>
-  </mat-tab>
-  <mat-tab label="Tab 3">
-    <mat-card>Simple card# 3</mat-card>
-  </mat-tab>
-</mat-tab-group>
+<div>
+  <mat-card>
+      <mat-tab-group>
+          <mat-tab label="Over view" fxLayoutAlign="space-around" fxLayoutGap="10px">
+              <mat-card class="z-depth-5">
+                  <button mat-raised-button color="primary">Show token info </button>
+                  <button mat-raised-button color="primary">Show Details of a reward </button>
+                  <button mat-raised-button color="primary">Show all available rewards </button>
+                  <button mat-raised-button color="primary">Show specific customer details </button>
+                  <button mat-raised-button color="primary">Show all registered customers </button>
+                  <button mat-raised-button color="primary">Show all registered merchants </button>
+                  <button mat-raised-button color="primary">Show specific merchant's info </button>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="Business owner">
+              <mat-card class="z-depth-5">
+                  <button mat-raised-button color="primary">Create a token </button>
+                  <button mat-raised-button color="primary">Modify a token </button>
+                  <button mat-raised-button color="primary">Send a token to a customer </button>
+                  <button mat-raised-button color="primary">Create a reward and send to a customer</button>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="Customer">
+                <mat-card class="z-depth-5">
+                    <button mat-raised-button color="primary">Send token to a business </button>
+                    <button mat-raised-button color="primary">Send token to other customer </button>
+                    <button mat-raised-button color="primary">Redeem a reward </button>
+                </mat-card>
+            </mat-tab>
+          </mat-tab-group>
+  </mat-card>
+</div>
+
+<div>
+<mat-card>
+    <mat-tab-group>
+        <mat-tab label="Merchants" fxLayoutAlign="space-around" fxLayoutGap="10px">
+            <div *ngIf="!merchants">
+                    <mat-spinner></mat-spinner>
+            </div>
+            <mat-card class="z-depth-5" *ngIf="merchants">
+                    <app-merchantdt [merchants]="merchants"></app-merchantdt>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Customers">
+            <div *ngIf="!customers">
+                    <mat-spinner></mat-spinner>
+            </div>
+            <mat-card class="z-depth-5" *ngIf="customers">
+                    <app-customerdt [customers]="customers"></app-customerdt>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Rewards">
+                <div *ngIf="!rewards">
+                        <mat-spinner></mat-spinner>
+                </div>
+                <mat-card class="z-depth-5" *ngIf="rewards">
+                        <app-rewarddt [rewards]="rewards"></app-rewarddt>
+                </mat-card>
+        </mat-tab>
+        <!-- <mat-tab label="Tokens">
+                <div *ngIf="!tokens">
+                        <mat-spinner></mat-spinner>
+                </div>
+                <mat-card class="z-depth-5" *ngIf="tokens">
+                        <app-merchantdt [tokens]="tokens"></app-merchantdt>
+                </mat-card>
+        </mat-tab> -->
+        </mat-tab-group>
+    </mat-card>
+</div>
+
+
+  
