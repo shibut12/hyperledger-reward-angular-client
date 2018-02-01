@@ -1,20 +1,20 @@
-<div class="bounds">
-    
-  <div class="content" 
-       fxLayout="row" 
-       fxLayout.xs="column" 
-       fxFlexFill >
-       
-      <div fxFlex="15" class="sec1" fxFlex.xs="55">
-          first-section
-      </div>
-      <div fxFlex="30" class="sec2" >
-          second-section
-      </div>
-      <div fxFlex="55" class="sec3" fxFlex.xs="15">
-          third-section
-      </div>
-      
-  </div>
-  
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="15%">Item 1</div>
+  <div class="item item-2" fxFlex="20%" fxFlexOrder="3">Item 2</div>
+  <div class="item item-3" fxFlex>Item 3</div>
+</div>
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>
+  <div class="item item-5" fxFlex="200px">Item 5</div>
 </div>

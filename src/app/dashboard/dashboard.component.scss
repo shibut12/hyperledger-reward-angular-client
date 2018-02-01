@@ -1,29 +1,30 @@
-.bounds {
-    background-color:#ddd;
-    height :800px;
+ 
+  .item-1 {
+    background: #C2185B;
+    text-transform: uppercase;
+    color:white;
   }
   
-  .sec1 {
-    background: red;
+  .item-2 {
+    background: #E91E63;
+    color:white; 
+    text-transform: uppercase
+  }
+  .item-3 {
+    background: #AD1457;
+    color:white; 
+    text-transform: uppercase
+  }
+  .item-4 {
+    background: #AFB42B;
     color:white;
     text-transform: uppercase
   }
   
-  .sec2 {
-    background: yellow;
-    color:blue;
-    
-  }
-  
-  .sec3 {
-    background: blue;
+  .item-5 {
+    background: #FFA000;
     color:white;
     text-transform: uppercase
-  }
-  
-  .sec1, .sec2, .sec3 {
-    padding-top:20px;
-    text-align:center
   }
   
   .content {

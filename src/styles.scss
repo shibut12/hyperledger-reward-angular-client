@@ -1,4 +1,51 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/theming';
+@include mat-core();
+
+// $candy-app-primary: mat-palette($mat-indigo);
+// $candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+// $candy-app-warn: mat-palette($mat-red);
+
+// $candy-app-theme: mat-light-theme(
+//     $candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// @include angular-material-theme($candy-app-theme);
+//==============================================================
+// $primary-dark: mat-palette($mat-pink, 700);
+// $accent-dark: mat-palette($mat-green);
+// $warn-dark: mat-palette($mat-red);
+
+// $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+
+// @include angular-material-theme($theme-dark);
+
+// $anms-black-primary: mat-palette($mat-grey, 900, 500, 900);
+// $anms-black-accent: mat-palette($mat-green, A200);
+// $anms-black-warn: mat-palette($mat-red, A200);
+
+// $anms-black-theme: mat-dark-theme(
+//   $anms-black-primary,
+//   $anms-black-accent,
+//   $anms-black-warn
+// );
+
+// @include angular-material-theme($anms-black-theme);
+
+$anms-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$anms-light-accent: mat-palette($mat-brown, 200);
+$anms-light-warn: mat-palette($mat-deep-orange, 200);
+
+$anms-light-theme: mat-light-theme(
+  $anms-light-primary,
+  $anms-light-accent,
+  $anms-light-warn
+);
+
+@include angular-material-theme($anms-light-theme);
+
 body{
     margin:0px;
+    height: 100%;
+}
+html{
+    height: 100%;
 }
