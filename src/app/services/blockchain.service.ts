@@ -4,7 +4,7 @@ import { Merchant } from '../models/merchant';
 import { Customer } from '../models/customer';
 import { RewardxToken } from '../models/rewardxToken';
 import { Reward } from '../models/reward';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -112,6 +112,28 @@ export class BlockchainService {
   getAllTokens(){
     return this.dataStore.tokens;
   };
+
+  //Create Methods
+
+  createMerchant(merchant: Merchant): Promise<Merchant> {
+    const userUrl = 'http://18.217.75.196:3000/api/Create_Marchent';
+    return new Promise((resolver, reject) => {
+       this.dataStore.merchants.push(merchant);
+       this._merchants.next(Object.assign({}, this.dataStore).merchants);
+       this.http.post<Merchant>(userUrl, merchant).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(merchant);
+    });
+  }
+
+  createCustomer(customer: Customer): Promise<Customer> {
+    const userUrl = 'http://18.217.75.196:3000/api/Create_Customer';
+    return new Promise((resolver, reject) => {
+       this.dataStore.customers.push(customer);
+       this._customers.next(Object.assign({}, this.dataStore).customers);
+       this.http.post<Customer>(userUrl, customer).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(customer);
+    });
+  }
 
 
 }

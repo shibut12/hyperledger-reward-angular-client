@@ -1,4 +1,4 @@
 export class Merchant {
-    id: number;
+    marchentId: number;
     name: string;
 }

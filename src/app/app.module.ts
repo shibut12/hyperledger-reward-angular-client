@@ -15,7 +15,9 @@ import { MerchantdtComponent } from './merchantdt/merchantdt.component';
 import { CustomerdtComponent } from './customerdt/customerdt.component';
 import { RewarddtComponent } from './rewarddt/rewarddt.component';
 import { TokendtComponent } from './tokendt/tokendt.component';
-
+import { CreateMerchantComponent } from './dialogs/create-merchant/create-merchant.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CreateCustomerComponent } from './dialogs/create-customer/create-customer.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +29,23 @@ import { TokendtComponent } from './tokendt/tokendt.component';
     CustomerdtComponent,
     RewarddtComponent,
     TokendtComponent,
+    CreateMerchantComponent,
+    CreateCustomerComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [BlockchainService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CreateMerchantComponent,
+    CreateCustomerComponent
+  ]
 })
 export class AppModule { }
