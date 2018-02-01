@@ -19,6 +19,9 @@ import { CreateMerchantComponent } from './dialogs/create-merchant/create-mercha
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreateCustomerComponent } from './dialogs/create-customer/create-customer.component';
 import { CreateTokenComponent } from './dialogs/create-token/create-token.component';
+import { MerchantSendCustomerComponent } from './dialogs/merchant-send-customer/merchant-send-customer.component';
+import { CustomerSendMerchantComponent } from './dialogs/customer-send-merchant/customer-send-merchant.component';
+import { CustomerSendCustomerComponent } from './dialogs/customer-send-customer/customer-send-customer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { CreateTokenComponent } from './dialogs/create-token/create-token.compon
     CreateMerchantComponent,
     CreateCustomerComponent,
     CreateTokenComponent,
+    MerchantSendCustomerComponent,
+    CustomerSendMerchantComponent,
+    CustomerSendCustomerComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,10 @@ import { CreateTokenComponent } from './dialogs/create-token/create-token.compon
   entryComponents: [
     CreateMerchantComponent,
     CreateCustomerComponent,
-    CreateTokenComponent
+    CreateTokenComponent,
+    MerchantSendCustomerComponent,
+    CustomerSendMerchantComponent,
+    CustomerSendCustomerComponent
   ]
 })
 export class AppModule { }

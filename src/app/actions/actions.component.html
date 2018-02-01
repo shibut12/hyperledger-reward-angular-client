@@ -10,10 +10,9 @@
             </mat-tab>
             <mat-tab label="Transfer">
               <mat-card class="z-depth-5">
-                  <button mat-raised-button color="primary">Send a token to a customer </button>
-                  <button mat-raised-button color="primary">Send token to a business </button>
-                  <button mat-raised-button color="primary">Send token to other customer </button>
-                  <button mat-raised-button color="primary">Redeem a reward </button>
+                  <button mat-raised-button color="primary" (click)="openTransferMerchantCustomerDialog()">Merchant sends tokens to a customer </button>
+                  <button mat-raised-button color="primary" (click)="openTransferCustomerMerchantDialog()">Customer send tokens to a merchant </button>
+                  <button mat-raised-button color="primary" (click)="openTransferCustomerCustomerDialog()">Customer send tokens to another customer </button>
               </mat-card>
             </mat-tab>
             <mat-tab label="Show">

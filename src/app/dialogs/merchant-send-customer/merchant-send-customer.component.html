@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Transfer from Merchant to Customer</h2>
+<mat-dialog-content>
+  <div class="example-container">
+      <mat-form-field>
+          <input matInput placeholder="Customer Id" [(ngModel)]="xferObj.customerId" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Merchant ID" [(ngModel)]="xferObj.marchentId" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Amount of tokens" [(ngModel)]="xferObj.tokenamount" required>
+      </mat-form-field>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="save()">
+    <mat-icon>save</mat-icon> Transfer
+  </button>
+  <button mat-button (click)="dismiss()">
+    <mat-icon>cancel</mat-icon> Cancel
+  </button>
+</mat-dialog-actions>

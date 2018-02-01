@@ -9,6 +9,9 @@ import { CreateMerchantComponent } from '../dialogs/create-merchant/create-merch
 import { Router } from '@angular/router';
 import { CreateCustomerComponent } from '../dialogs/create-customer/create-customer.component';
 import { CreateTokenComponent } from '../dialogs/create-token/create-token.component';
+import { MerchantSendCustomerComponent } from '../dialogs/merchant-send-customer/merchant-send-customer.component';
+import { CustomerSendMerchantComponent } from '../dialogs/customer-send-merchant/customer-send-merchant.component';
+import { CustomerSendCustomerComponent } from '../dialogs/customer-send-customer/customer-send-customer.component';
 
 @Component({
   selector: 'app-actions',
@@ -67,7 +70,7 @@ export class ActionsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.openSnackBar("New Merchant added", "Navigate")
+        this.openSnackBar("New Merchant added", "Verify")
         .onAction().subscribe(() => {
           //this.router.navigate(['/', result.id]);
         });
@@ -81,7 +84,7 @@ export class ActionsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.openSnackBar("New Customer added", "Navigate")
+        this.openSnackBar("New Customer added", "Verify")
         .onAction().subscribe(() => {
           //this.router.navigate(['/', result.id]);
         });
@@ -95,7 +98,7 @@ export class ActionsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.openSnackBar("New token added", "Navigate")
+        this.openSnackBar("New token added", "Verify")
         .onAction().subscribe(() => {
           //this.router.navigate(['/', result.id]);
         });
@@ -103,6 +106,48 @@ export class ActionsComponent implements OnInit {
     });
   }
 
+  openTransferMerchantCustomerDialog(): void{
+    let dialogRef = this.dialog.open(MerchantSendCustomerComponent, {
+      width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.openSnackBar("Transfer from Merchant to customer has been completed", "Verify")
+        .onAction().subscribe(() => {
+          //this.router.navigate(['/', result.id]);
+        });
+      }
+    });
+  }
+
+  openTransferCustomerMerchantDialog(): void{
+    let dialogRef = this.dialog.open(CustomerSendMerchantComponent, {
+      width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.openSnackBar("Transfer from customer to merchant has been completed", "Verify")
+        .onAction().subscribe(() => {
+          //this.router.navigate(['/', result.id]);
+        });
+      }
+    });
+  }
+
+  openTransferCustomerCustomerDialog(): void{
+    let dialogRef = this.dialog.open(CustomerSendCustomerComponent, {
+      width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.openSnackBar("Transfer from customer to customer has been completed", "Verify")
+        .onAction().subscribe(() => {
+          //this.router.navigate(['/', result.id]);
+        });
+      }
+    });
+  }
+  
 
   openSnackBar(message: string, action: string): MatSnackBarRef<SimpleSnackBar>{
     return this.snackBar.open(message, action, {

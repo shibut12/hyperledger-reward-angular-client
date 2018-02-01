@@ -4,8 +4,10 @@ import { Merchant } from '../models/merchant';
 import { Customer } from '../models/customer';
 import { RewardxToken } from '../models/rewardxToken';
 import { Reward } from '../models/reward';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { MerchantCustomerXfer } from '../models/MerchantCustomerXfer';
+import { CustomerCustomerXfer } from '../models/CustomerCustomerXfer';
 
 @Injectable()
 export class BlockchainService {
@@ -20,6 +22,12 @@ export class BlockchainService {
     tokens: RewardxToken[],
     rewards: Reward[]
   };
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  }
 
   constructor(private http: HttpClient) {
     this.dataStore = {
@@ -143,6 +151,28 @@ export class BlockchainService {
        resolver(token);
     });
   }
-
-
+  transferMerchantCustomer(xferObj: MerchantCustomerXfer): Promise<MerchantCustomerXfer> {
+    const userUrl = 'http://18.217.75.196:3000/api/SendToken_Merchant_To_Customer';
+    return new Promise((resolver, reject) => {
+       this.http.post<MerchantCustomerXfer>(userUrl, xferObj,this.httpOptions).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(xferObj)
+       
+    });
+  }
+  transferCustomerMerchant(xferObj: MerchantCustomerXfer): Promise<MerchantCustomerXfer> {
+    const userUrl = 'http://18.217.75.196:3000/api/SendToken_Customer_To_Marchent';
+    return new Promise((resolver, reject) => {
+       this.http.post<MerchantCustomerXfer>(userUrl, xferObj,this.httpOptions).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(xferObj)
+       
+    });
+  }
+  transferCustomerCustomer(xferObj: CustomerCustomerXfer): Promise<CustomerCustomerXfer> {
+    const userUrl = 'http://18.217.75.196:3000/api/SendToken_Customer_To_Customer';
+    return new Promise((resolver, reject) => {
+       this.http.post<CustomerCustomerXfer>(userUrl, xferObj,this.httpOptions).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(xferObj)
+       
+    });
+  }
 }
