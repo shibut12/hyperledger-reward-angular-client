@@ -18,6 +18,7 @@ import { TokendtComponent } from './tokendt/tokendt.component';
 import { CreateMerchantComponent } from './dialogs/create-merchant/create-merchant.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreateCustomerComponent } from './dialogs/create-customer/create-customer.component';
+import { CreateTokenComponent } from './dialogs/create-token/create-token.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CreateCustomerComponent } from './dialogs/create-customer/create-custom
     TokendtComponent,
     CreateMerchantComponent,
     CreateCustomerComponent,
+    CreateTokenComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { CreateCustomerComponent } from './dialogs/create-customer/create-custom
   bootstrap: [AppComponent],
   entryComponents: [
     CreateMerchantComponent,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+    CreateTokenComponent
   ]
 })
 export class AppModule { }

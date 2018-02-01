@@ -134,6 +134,15 @@ export class BlockchainService {
        resolver(customer);
     });
   }
+  createToken(token: RewardxToken): Promise<RewardxToken> {
+    const userUrl = 'http://18.217.75.196:3000/api/Create_Token';
+    return new Promise((resolver, reject) => {
+       this.dataStore.tokens.push(token);
+       this._tokens.next(Object.assign({}, this.dataStore).tokens);
+       this.http.post<RewardxToken>(userUrl, token).subscribe(data => console.log(data), (err: HttpErrorResponse) => console.log(err));
+       resolver(token);
+    });
+  }
 
 
 }

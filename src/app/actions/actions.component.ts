@@ -8,6 +8,7 @@ import { MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular
 import { CreateMerchantComponent } from '../dialogs/create-merchant/create-merchant.component';
 import { Router } from '@angular/router';
 import { CreateCustomerComponent } from '../dialogs/create-customer/create-customer.component';
+import { CreateTokenComponent } from '../dialogs/create-token/create-token.component';
 
 @Component({
   selector: 'app-actions',
@@ -73,6 +74,7 @@ export class ActionsComponent implements OnInit {
       }
     });
   }
+
   openCreateCustomerDialog(): void{
     let dialogRef = this.dialog.open(CreateCustomerComponent, {
       width: '450px'
@@ -80,6 +82,20 @@ export class ActionsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.openSnackBar("New Customer added", "Navigate")
+        .onAction().subscribe(() => {
+          //this.router.navigate(['/', result.id]);
+        });
+      }
+    });
+  }
+
+  openCreateTokenDialog(): void{
+    let dialogRef = this.dialog.open(CreateTokenComponent, {
+      width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.openSnackBar("New token added", "Navigate")
         .onAction().subscribe(() => {
           //this.router.navigate(['/', result.id]);
         });

@@ -1,29 +1,27 @@
 <div>
   <mat-card>
       <mat-tab-group>
-          <mat-tab label="Common actions" fxLayoutAlign="space-around" fxLayoutGap="10px">
+          <mat-tab label="Create" fxLayoutAlign="space-around" fxLayoutGap="10px">
               <mat-card class="z-depth-5">
                   <button mat-raised-button color="primary" (click)="openCreateMerchantDialog()">Create a Merchant </button>
                   <button mat-raised-button color="primary" (click)="openCreateCustomerDialog()">Create a Customer </button>
-                  <button mat-raised-button color="primary">Show token info </button>
-                  <button mat-raised-button color="primary">Show Details of a reward </button>
-                  <button mat-raised-button color="primary">Show specific customer details </button>
-                  <button mat-raised-button color="primary">Show specific merchant's info </button>
+                  <button mat-raised-button color="primary" (click)="openCreateTokenDialog()">Create new token </button>
               </mat-card>
             </mat-tab>
-            <mat-tab label="Actions for a Business owner">
+            <mat-tab label="Transfer">
               <mat-card class="z-depth-5">
-                  <button mat-raised-button color="primary">Create a token </button>
-                  <button mat-raised-button color="primary">Modify a token </button>
                   <button mat-raised-button color="primary">Send a token to a customer </button>
-                  <button mat-raised-button color="primary">Create a reward and send to a customer</button>
+                  <button mat-raised-button color="primary">Send token to a business </button>
+                  <button mat-raised-button color="primary">Send token to other customer </button>
+                  <button mat-raised-button color="primary">Redeem a reward </button>
               </mat-card>
             </mat-tab>
-            <mat-tab label="Actions for a Customer">
+            <mat-tab label="Show">
                 <mat-card class="z-depth-5">
-                    <button mat-raised-button color="primary">Send token to a business </button>
-                    <button mat-raised-button color="primary">Send token to other customer </button>
-                    <button mat-raised-button color="primary">Redeem a reward </button>
+                        <button mat-raised-button color="primary">Show token info </button>
+                        <button mat-raised-button color="primary">Show Details of a reward </button>
+                        <button mat-raised-button color="primary">Show specific customer details </button>
+                        <button mat-raised-button color="primary">Show specific merchant's info </button>
                 </mat-card>
             </mat-tab>
           </mat-tab-group>
