@@ -1,30 +1,36 @@
 <div>
-  <mat-card>
-      <mat-tab-group>
-          <mat-tab label="Create" fxLayoutAlign="space-around" fxLayoutGap="10px">
-              <mat-card class="z-depth-5">
-                  <button mat-raised-button color="primary" (click)="openCreateMerchantDialog()">Create a Merchant </button>
-                  <button mat-raised-button color="primary" (click)="openCreateCustomerDialog()">Create a Customer </button>
-                  <button mat-raised-button color="primary" (click)="openCreateTokenDialog()">Create new token </button>
-              </mat-card>
-            </mat-tab>
-            <mat-tab label="Transfer">
-              <mat-card class="z-depth-5">
-                  <button mat-raised-button color="primary" (click)="openTransferMerchantCustomerDialog()">Merchant sends tokens to a customer </button>
-                  <button mat-raised-button color="primary" (click)="openTransferCustomerMerchantDialog()">Customer send tokens to a merchant </button>
-                  <button mat-raised-button color="primary" (click)="openTransferCustomerCustomerDialog()">Customer send tokens to another customer </button>
-              </mat-card>
-            </mat-tab>
-            <mat-tab label="Show">
-                <mat-card class="z-depth-5">
-                        <button mat-raised-button color="primary">Show token info </button>
-                        <button mat-raised-button color="primary">Show Details of a reward </button>
-                        <button mat-raised-button color="primary">Show specific customer details </button>
-                        <button mat-raised-button color="primary">Show specific merchant's info </button>
-                </mat-card>
-            </mat-tab>
-          </mat-tab-group>
-  </mat-card>
+        <mat-card>
+                <mat-tab-group>
+                        <mat-tab label="Create" fxLayoutAlign="space-around" fxLayoutGap="10px">
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary" (click)="openCreateMerchantDialog()">Create a Merchant </button>
+                                        <button mat-raised-button color="primary" (click)="openCreateCustomerDialog()">Create a Customer </button>
+                                        <button mat-raised-button color="primary" (click)="openCreateTokenDialog()">Create new token </button>
+                                </mat-card>
+                        </mat-tab>
+                        <mat-tab label="Transfer">
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary" (click)="openTransferMerchantCustomerDialog()">Merchant send tokens to a customer </button>
+                                        <button mat-raised-button color="primary" (click)="openTransferCustomerMerchantDialog()">Customer send tokens to a merchant </button>
+                                        <button mat-raised-button color="primary" (click)="openTransferCustomerCustomerDialog()">Customer send tokens to another customer </button>
+                                </mat-card>
+                        </mat-tab>
+                        <mat-tab label="Show">
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary">Show details of a token </button>
+                                </mat-card>
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary">Show details of a reward </button>
+                                </mat-card>
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary">Show details of a customer </button>
+                                </mat-card>
+                                <mat-card class="z-depth-5">
+                                        <button mat-raised-button color="primary">Show details of a merchant </button>
+                                </mat-card>
+                        </mat-tab>
+                </mat-tab-group>
+        </mat-card>
 </div>
 
 <div>
