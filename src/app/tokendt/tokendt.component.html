@@ -1,16 +1,22 @@
 <div class="example-container mat-elevation-z8">  
     <mat-table #table [dataSource]="dataSource">
   
+        'name', 'value', 'symbol', 'marchentId', 'assignedToMerchantFlag', 'assignedToCustomerFlag'
       <!-- Position Column -->
-      <ng-container matColumnDef="customerId">
-        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.customerId}} </mat-cell>
-      </ng-container>
-  
-      <!-- Name Column -->
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef> Value </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
       </ng-container>
       
       <ng-container matColumnDef="marchentId">
@@ -18,27 +24,26 @@
         <mat-cell *matCellDef="let element"> {{element.marchentId}} </mat-cell>
       </ng-container>
       
-      <ng-container matColumnDef="tokenamount">
-        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.tokenamount}} </mat-cell>
-      </ng-container>
-      
       <ng-container matColumnDef="validity">
         <mat-header-cell *matHeaderCellDef> Validity </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.validity}} </mat-cell>
       </ng-container>
       
-      <ng-container matColumnDef="customerId">
-        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.customerId}} </mat-cell>
+      <ng-container matColumnDef="assignedToMerchantFlag">
+        <mat-header-cell *matHeaderCellDef> Is assigned to merchant </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.assignedToMerchantFlag}} </mat-cell>
       </ng-container>
       
-      <ng-container matColumnDef="redeemFlag">
-        <mat-header-cell *matHeaderCellDef> Is Redeemed </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.redeemFlag}} </mat-cell>
+      <ng-container matColumnDef="assignedToCustomerFlag">
+        <mat-header-cell *matHeaderCellDef> Is assigned to customer </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.assignedToCustomerFlag}} </mat-cell>
       </ng-container>
       
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+    <mat-paginator #paginator
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
   </div>

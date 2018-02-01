@@ -58,14 +58,14 @@
                         <app-rewarddt [rewards]="rewards"></app-rewarddt>
                 </mat-card>
         </mat-tab>
-        <!-- <mat-tab label="Tokens">
+        <mat-tab label="Tokens">
                 <div *ngIf="!tokens">
                         <mat-spinner></mat-spinner>
                 </div>
                 <mat-card class="z-depth-5" *ngIf="tokens">
-                        <app-merchantdt [tokens]="tokens"></app-merchantdt>
+                        <app-tokendt [tokens]="tokens"></app-tokendt>
                 </mat-card>
-        </mat-tab> -->
+        </mat-tab>
         </mat-tab-group>
     </mat-card>
 </div>
