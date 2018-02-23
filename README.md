@@ -17,3 +17,8 @@ Prior to run this code, matach your development environment to following.
         ```shell
         npm start
         ```
+    ### Run the application in production
+        ```shell
+        npm build
+        npm start
+        ```
