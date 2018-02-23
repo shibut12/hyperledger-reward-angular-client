@@ -2,9 +2,10 @@
 
 ## Environemnt setup
 Prior to run this code, matach your development environment to following.
-    * node version 8.9.4
-    * npm version 5.6.0
-    * Angular CLI version 1.5.3
+    
+* node version 8.9.4
+* npm version 5.6.0
+* Angular CLI version 1.5.3
 
 ### Install following after installing NodeJS
 * Install Typescript
