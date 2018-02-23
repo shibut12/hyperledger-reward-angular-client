@@ -28,17 +28,17 @@ Prior to run this code, matach your development environment to following.
 ## How to run the code
 
 ### When you develop Agnular/Material components of this app
-    ```shell
-    cd <project root>
-    ng serve
-    ```
+```shell
+cd <project root>
+ng serve
+```
 
 ### When you are developing backend/node code
-    ```shell
-    npm start
-    ```
+```shell
+npm start
+```
 ### Run the application in production
-    ```shell
-    npm build
-    npm start
-    ```
+```shell
+npm build
+npm start
+```
